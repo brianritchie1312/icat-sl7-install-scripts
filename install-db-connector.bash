@@ -13,7 +13,7 @@ fi
 mysqlConnector=mysql-connector-java-5.1.39
 echo "Downloading $mysqlConnector ..."
 wget http://dev.mysql.com/get/Downloads/Connector-J/$mysqlConnector.zip
-unzip $mysqlConnector.zip
+unzip -o $mysqlConnector.zip
 echo "Copying $mysqlConnector-bin.jar to glassfish..."
 cp $mysqlConnector/$mysqlConnector-bin.jar $glassfishHome/glassfish/lib
 echo "Restarting glassfish..."

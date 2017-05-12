@@ -5,8 +5,13 @@
 #
 source config.bash
 ./install-jdk.bash
-./install-mysql.bash
-./install-python-requests.bash
+if [ "$installIcat" = "t" ]
+then
+    ./install-mysql.bash
+    ./install-python-requests.bash
+else
+    echo "ICAT is not being installed, so skipping MySQL and the python requests module"
+fi
 #
 # Create glassfish user (and do remainder of the installation)
 ./create-glassfish-user.bash
